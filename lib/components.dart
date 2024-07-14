@@ -1,4 +1,4 @@
-library component;
+library components;
 
 import 'package:flutter/material.dart';
 import 'dart:developer' as dev;

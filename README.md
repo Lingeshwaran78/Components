@@ -13,7 +13,7 @@ Add this package to your project's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  component: ^0.0.1
+  components: ^0.0.1
 ```
 then run 
 
@@ -21,7 +21,7 @@ flutter pub get
 
 ## Usage
 ```dart
-import 'package:components/component.dart';
+import 'package:components/components.dart';
 
 void main() {
   Components.showLogging(true);
