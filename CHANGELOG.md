@@ -1,10 +1,10 @@
 # Changelog
 
-## [1.0.0] - 2024-07-14
+## [0.0.1] - 2024-07-14
 
 ### Added
-- **Components**
-    - Singleton pattern implemented for the `Components` class.
+- **Component**
+    - Singleton pattern implemented for the `Component` class.
     - Method to toggle logging (`showLogging`).
     - Method to log messages (`logger`).
     - Method to log errors with stack trace (`loggerStackTrace`).

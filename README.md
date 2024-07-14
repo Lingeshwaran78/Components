@@ -1,39 +1,67 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Components Package
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+A Flutter package that provides a variety of utility components and a customizable button with a shrinking animation effect.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Utility methods for logging, screen size calculations, input decorations, URL launching, and more.
+- A customizable `ShrinkingButton` widget with various styling options and a shrinking animation effect on tap.
 
-## Getting started
+## Installation
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Add this package to your project's `pubspec.yaml` file:
+
+```yaml
+dependencies:
+  component: ^0.0.1
+```
+then run 
+
+flutter pub get
 
 ## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
 ```dart
-const like = 'sample';
+import 'package:components/component.dart';
+
+void main() {
+  Components.showLogging(true);
+
+  Components.logger('This is a log message');
+  Components.loggerStackTrace('Error message', StackTrace.current);
+
+  double height = Components.screenHeight(context);
+  double width = Components.screenWidth(context);
+
+  InputDecoration decoration =
+  Components.textFieldDecoration(hintText: 'Enter text');
+
+  SizedBox boxHeight = Components.sizedBoxHeight(10.0);
+  SizedBox boxWidth = Components.sizedBoxWidth(10.0);
+
+  Future<bool> launched = Components.urlLauncher('https://www.example.com');
+
+  String cleanedString = Components.validString('  Some text  ');
+
+  Components.showToast(
+    context: context,
+    strMsg: 'This is a toast message',
+    toastBgColor: Colors.black,
+    textColor: Colors.white,
+    toastLength: Toast.LENGTH_SHORT,
+  );
+
+  Widget loader = Components.showLoader(isLoading: true, context: context);
+
+  Components().showExitDialog(context, title: 'Exit');
+
+  bool isListEmpty = Components.isNullOrEmptyList([]);
+  bool isStringEmpty = Components.isNullOrEmptyString('   ');
+
+  Uint8List imageBytes =
+  Components.convertBase64ToImage('data:image/png;base64,iVBORw0KGgo...');
+}
 ```
 
-## Additional information
+Contributing
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+Contributions are welcome! Please open an issue or submit a pull request on GitHub.
